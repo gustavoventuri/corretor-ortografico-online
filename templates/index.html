@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Formatado</title>
+    <style>
+        span[title]:hover:after {
+            content: attr(title);
+            padding: 4px 8px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            white-space: nowrap;
+            z-index: 20;
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <textarea name="text" rows="10" cols="80"></textarea>
+        <input type="submit" value="Corrigir Texto">
+    </form>
+    {% if request.method == 'POST' %}
+        <h2>Texto Original</h2>
+        <p>{{ original_text }}</p>
+        <h2>Problemas encontrados</h2>
+        <p>{{ apontamento_erros|safe }}</p>
+        <ol>
+            {% for item in lista_erros %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ol>
+        <ol>
+            {% for item in lista_sugestoes %}
+                <li>
+                    {{ item }}
+                </li>
+            {% endfor %}
+        </ol>
+        <h2>Texto Corrigido</h2>
+        <p>{{ corrected_text|safe }}</p>
+        <ul>
+            <li>Quantidade de erros: <b><i>{{ qt_erros }}</b></i></li>
+            <li>Quantidade de palavras: <b><i>{{ qt_palavras }}</b></i></li>
+            <li>Nota: <b><i>{{ nota }}</b></i></li>
+        </ul>
+    {% endif %}
+</body>
+</html>

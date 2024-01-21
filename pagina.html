@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corretor Ortográfico Automático</title>
+    <style>
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .box {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            min-height: 200px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>Corretor Ortográfico Automático</header>
+    
+    <div class="container">
+        <div class="box">
+            <h2>Caixa de texto</h2>
+            <textarea></textarea>
+            <button>Corrigir</button>
+        </div>
+        <div class="box">
+            <h2>Erros encontrados</h2>
+            <p>Texto com erros apontados</p>
+        </div>
+        <div class="box">
+            <h2>Sugestão de correção</h2>
+            <p>Texto corrigido</p>
+        </div>
+    </div>
+</body>
+</html>
